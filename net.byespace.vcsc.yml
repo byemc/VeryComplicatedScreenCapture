@@ -1,0 +1,20 @@
+id: net.byespace.vcsc
+runtime: org.kde.Platform
+runtime-version: '6.10'
+base: io.qt.PySide.BaseApp
+base-version: '6.10'
+sdk: org.kde.Sdk
+command: vcsc
+finish-args:
+  - "--share=ipc"
+  - "--share=fallback-x11"
+  - "--share=wayland"
+  - "--shaer"
+modules:
+  - name: vcsc
+    buildsystem: simple
+    build-commands:
+      - "pip3 install --no-build-isolation --prefix=/app ."
+    sources:
+      - type: archive
+        path: dist/vcsc-1.0.0a1.tar.gz

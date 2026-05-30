@@ -4,9 +4,7 @@ from PySide6.QtMultimedia import QVideoFrameFormat
 from PySide6.QtMultimediaWidgets import QVideoWidget, QGraphicsVideoItem
 from PySide6.QtGui import QGuiApplication, QImage
 
-from .models.inputs import DeviceListModel
-
-from rich import print
+from vcsc.inputs import DeviceListModel
 
 class ResolutionListModel(QAbstractListModel):
     def __init__(self, resolutions: list[QSize], parent=None):
@@ -93,7 +91,6 @@ class CameraController(QObject):
 
         self.video_input_model = DeviceListModel(self.video_inputs)
         self.audio_input_model = DeviceListModel(self.audio_inputs)
-        # self.video_format_model = CameraFormatListModel([])
 
         self.capture_session = QMediaCaptureSession()
         self.image_capturer = QImageCapture()
@@ -239,7 +236,6 @@ class CameraController(QObject):
             return QCameraFormat()
 
         formats = self.video_input_info.videoFormats()
-        print(f"{len(formats)} formats remain.")
 
         # Get closest resolution
         target_resolution_area = resolution.width() * resolution.height()
@@ -248,24 +244,20 @@ class CameraController(QObject):
             # print(format.resolution(), "vs", closest_resolution)
             if format.resolution() != closest_resolution:
                 formats.remove(format)
-        print(f"{len(formats)} formats remain.")
 
         # Get closest frame rate
         closest_frame_rate = min(self.get_supported_framerates(closest_resolution), key=lambda x: abs(framerate - x))
         for format in formats.copy():
             if format.maxFrameRate() != closest_frame_rate:
                 formats.remove(format)
-        print(f"{len(formats)} formats remain.")
 
         # Use the preferred pixel format if available, if not use the first one
         backup_formats = formats.copy()
         for format in formats.copy():
             if format.pixelFormat() != pixel_format:
                 formats.remove(format)
-        print(f"{len(formats)} formats remain.")
         if not formats:
             return backup_formats[0]
-        print(formats[0].resolution(), formats[0], resolution, formats[0].maxFrameRate(), framerate)
         return formats[0]
 
     @Slot(QModelIndex)

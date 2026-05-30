@@ -39,12 +39,16 @@ classifiers= [
 ]
 readme = "README.md"
 license = "Zlib"
-requires-python = ">=3.13"
+requires-python = ">=3.10.0"
 dependencies = [
-    "pyside6>=6.11.1",
-    "rich>=15.0.0",
+    "pyside6>=6.10.0"
 ]
 
 [project.urls]
 Homepage = "https://byespace.net/software/vcsc.html"
 Repository = "https://shinonome.rocks/bye/VeryComplicatedScreenCapture"
+
+[tool.setuptools.data-files]
+"share/applications" = ["net.byespace.vcsc.desktop"]
+"share/icons/hicolor/128/apps" = ["net.byespace.vcsc.png"]
+"share/metainfo" = ["net.byespace.vcsc.metainfo.xml"]

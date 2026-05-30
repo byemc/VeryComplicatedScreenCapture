@@ -2,7 +2,7 @@ from PySide6.QtCore import *
 from PySide6.QtWidgets import *
 
 from vcsc.CameraController import CameraController, ResolutionListModel
-from vcsc.models.styles import AppStylesModel
+from vcsc.styles import AppStylesModel
 class SettingsWidget(QDialog):
     def __init__(self, camera_controller: CameraController, application: QApplication, parent=None):
         super().__init__(parent)

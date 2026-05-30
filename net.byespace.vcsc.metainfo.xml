@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>net.byespace.vcsc</id>
+
+    <name>Very Complicated Screen Capture</name>
+    <summary>An overcomplicated capture card/webcam monitoring and recording tool</summary>
+
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>Zlib</project_license>
+
+    <description>
+        <p>
+            An overcomplicated capture card/webcam monitoring and recording tool. Allows you to quickly grab screenshots
+            and screen recordings from a capture card.
+        </p>
+    </description>
+
+    <content_rating type="oars-1.0"/>
+
+    <developer id="net.byespace">
+        <name>Byespace</name>
+    </developer>
+
+    <url type="homepage">https://byespace.net/software/vcsc.html</url>
+    <url type="vcs-browser">https://shinonome.rocks/bye/VeryComplicatedScreenCapture</url>
+
+    <releases>
+        <release version="1.0.0a1" date="2026-05-10">
+            <description>
+                <p>Initial alpha release.</p>
+            </description>
+        </release>
+    </releases>
+
+
+    <launchable type="desktop-id">net.byespace.vcsc.desktop</launchable>
+</component>

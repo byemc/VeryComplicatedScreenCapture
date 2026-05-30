@@ -1,26 +1,31 @@
-
+import os
+import signal
 import sys
 
-# Qt
 import PySide6
 from PySide6 import QtCore, QtWidgets
 
-# Console formatting
-from rich import print
-
-from vcsc.widgets.MainWindow import MainWindow
+from vcsc import __version__
+from vcsc.MainWindow import MainWindow
 from vcsc.CameraController import CameraController
 
 def main():
     _APPNAME = "Very Complicated Screen Capture"
-    print(_APPNAME + " 0.0.0")
+    print(_APPNAME, __version__)
     print("(c) https://byespace.net")
+    print("Provided under the zlib license.")
+    print()
+
+    print(f"Launching with arguments: {sys.argv}")
     print()
 
     print(f"Using\tPySide\t{PySide6.__version__}")
     print(f"\tQt\t{QtCore.__version__}")
+    print(f"PySide6 path: {PySide6.__file__}")
     print()
     print()
+
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
 
     # Qt time
     app = QtWidgets.QApplication(sys.argv)
