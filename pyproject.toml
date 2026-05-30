@@ -25,6 +25,9 @@ classifiers= [
 
     # Supported Python versions
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
 
@@ -41,11 +44,13 @@ readme = "README.md"
 license = "Zlib"
 requires-python = ">=3.10.0"
 dependencies = [
-    "pyside6>=6.10.0"
+    "rich~=15.0",
+    "pyside6~=6.10; os_name != 'nt' or (os_name == 'nt' and platform_release > '10')",
+    "pyside6~=6.10, < 6.13; os_name == 'nt' and platform_release <= '10'"
 ]
 
 [project.urls]
-Homepage = "https://byespace.net/software/vcsc.html"
+Homepage = "https://byespace.net/software/vcsc/"
 Repository = "https://shinonome.rocks/bye/VeryComplicatedScreenCapture"
 
 [tool.setuptools.data-files]

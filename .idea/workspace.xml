@@ -4,31 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a250fba-9dfb-4f47-be62-2ac8ea41c14f" name="Changes" comment="Convert the program into a package">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pyProjectModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcsc.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net.byespace.vcsc.desktop" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net.byespace.vcsc.metainfo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net.byespace.vcsc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net.byespace.vcsc.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VeryComplicatedScreenCapture.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="1a250fba-9dfb-4f47-be62-2ac8ea41c14f" name="Changes" comment="Prerequisites for making this production-ready">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vcsc/CameraController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vcsc/CameraController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vcsc/models/inputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vcsc/inputs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vcsc/models/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vcsc/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vcsc/models/styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vcsc/styles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vcsc/vcsc_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vcsc/vcsc_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vcsc/widgets/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vcsc/MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vcsc/widgets/SettingsWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vcsc/SettingsWidget.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vcsc/widgets/VideoWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vcsc/VideoWidget.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vcsc/widgets/widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vcsc/widgets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vcsc/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vcsc/MainWindow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +48,7 @@
     "last_opened_file_path": "/home/bye/Projects/verycomplicatedscreencapture/src/vcsc/models",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "uv run.VCSC.executor": "Run",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -99,7 +80,7 @@
       <updated>1780136080145</updated>
       <workItem from="1780136081568" duration="16589000" />
       <workItem from="1780165385189" duration="160000" />
-      <workItem from="1780165643781" duration="255000" />
+      <workItem from="1780165643781" duration="4883000" />
     </task>
     <task id="LOCAL-00001" summary="Convert the program into a package">
       <option name="closed" value="true" />
@@ -109,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780137451381</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Prerequisites for making this production-ready">
+      <option name="closed" value="true" />
+      <created>1780165993972</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780165993972</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,10 +120,12 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="Convert the program into a package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Convert the program into a package" />
+    <MESSAGE value="Prerequisites for making this production-ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prerequisites for making this production-ready" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/verycomplicatedscreencapture$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1780136859110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/vcsc" />
     <SUITE FILE_PATH="coverage/verycomplicatedscreencapture$vcsc_app.coverage" NAME="vcsc_app Coverage Results" MODIFIED="1780150335723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/vcsc" />
+    <SUITE FILE_PATH="coverage/verycomplicatedscreencapture$VCSC.coverage" NAME="VCSC Coverage Results" MODIFIED="1780172705415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

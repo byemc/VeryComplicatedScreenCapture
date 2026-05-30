@@ -33,7 +33,6 @@ class MainWindow(QMainWindow):
         icon = QIcon.fromTheme(iconography.icon("configure"))
         settings_action = QAction("&Settings", self, shortcut=QKeySequence("Ctrl+I"))
         settings_action.triggered.connect(self.open_settings)
-        # self.toolbar.addAction(settings_action)
         self.menuBar().addAction(settings_action)
         self.addAction(settings_action)
 
@@ -43,35 +42,44 @@ class MainWindow(QMainWindow):
         self.controller.image_captured.connect(self.copy_image)
         self.toolbar.addAction(copy_image_action)
         self.addAction(copy_image_action)
-        # self.menuBar().addAction(copy_image_action)
 
         fullscreen_action = QAction("Fullscreen (F11)", self, shortcut=QKeySequence("F11"))
         fullscreen_action.triggered.connect(self.toggle_fullscreen)
-        # self.toolbar.addAction(fullscreen_action)
         self.menuBar().addAction(fullscreen_action)
         self.addAction(fullscreen_action)
 
+        about_action = QAction("About", self)
+        about_action.triggered.connect(self.open_about)
+        self.menuBar().addAction(about_action)
 
         self.controller.video_input_changed.connect(self.set_status)
         self.controller.video_format_changed.connect(self.set_status)
 
+        self.prefersMaximised = False
+        self.prefersSize = QSize()
+
     def toggle_fullscreen(self):
-        print("Toggling fullscreen!", not self.isFullScreen())
         if not self.isFullScreen():
+            self.prefersMaximised = self.isMaximized()
+            self.prefersSize = self.size()
+            print("Setting fullscreen\t", "Is fullscreen:", self.isFullScreen(), "Is maximised:", self.prefersMaximised, "Size:", self.prefersSize)
+
             self.showFullScreen()
             self.toolbar.hide()
             self.statusBar().hide()
             self.menuBar().hide()
         else:
+            print("Setting fullscreen\t", "Is fullscreen:", self.isFullScreen(), "Is maximised:", self.prefersMaximised, "Size:", self.prefersSize)
             self.showNormal()
+            if self.prefersMaximised:
+                print("Setting maximised")
+                self.showMaximized()
+            else:
+                print("Setting size", self.prefersSize)
+                self.resize(self.prefersSize)
             self.toolbar.show()
             self.statusBar().show()
             self.menuBar().show()
-
-
-    # def mouseDoubleClickEvent(self, event: QMouseEvent):
-    #     self.toggle_fullscreen()
-    #     event.accept()
 
     @Slot(int, QImage)
     def copy_image(self, id: int, preview: QImage):
@@ -102,3 +110,7 @@ class MainWindow(QMainWindow):
             self.settings.show()
         self.settings.raise_()
         self.settings.activateWindow()
+
+    @Slot()
+    def open_about(self):
+        QMessageBox.about(self, "About", "Very Complicated Video Capture\n\nhttps://byespace.net\nMade available under the zlib license\nThanks for using my program!")
