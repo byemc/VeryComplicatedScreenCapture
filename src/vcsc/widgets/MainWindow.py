@@ -1,19 +1,14 @@
-from PySide6 import QtCore
 from PySide6.QtWidgets import *
 from PySide6.QtGui import *
 from PySide6.QtMultimedia import *
-from PySide6.QtMultimediaWidgets import *
 from PySide6.QtCore import *
 
 from rich import print
 
-import iconography
-import models.inputs
-import widgets
-from CameraController import CameraController
-from SettingsWidget import SettingsWidget
-from VideoWidget import VideoWidget
-
+from vcsc import iconography
+from vcsc.CameraController import CameraController
+from vcsc.widgets.SettingsWidget import SettingsWidget
+from vcsc.widgets.VideoWidget import VideoWidget
 
 class MainWindow(QMainWindow):
     def __init__(self, camera_controller: CameraController, parent = None, application: QApplication = None):

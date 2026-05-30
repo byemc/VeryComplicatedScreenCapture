@@ -1,12 +1,8 @@
 from PySide6.QtCore import *
-from PySide6.QtMultimedia import QCameraFormat
 from PySide6.QtWidgets import *
 
-import widgets
-from CameraController import CameraController, ResolutionListModel
-from models.styles import AppStylesModel
-from widgets import LabelComboBox
-
+from vcsc.CameraController import CameraController, ResolutionListModel
+from vcsc.models.styles import AppStylesModel
 class SettingsWidget(QDialog):
     def __init__(self, camera_controller: CameraController, application: QApplication, parent=None):
         super().__init__(parent)

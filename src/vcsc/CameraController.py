@@ -1,11 +1,10 @@
-﻿from PySide6.QtCore import Slot, QAbstractListModel, QModelIndex, Qt, Signal, QObject, QCameraPermission, \
-    QMicrophonePermission, SignalInstance, QSize
+﻿from PySide6.QtCore import *
 from PySide6.QtMultimedia import *
 from PySide6.QtMultimedia import QVideoFrameFormat
 from PySide6.QtMultimediaWidgets import QVideoWidget, QGraphicsVideoItem
 from PySide6.QtGui import QGuiApplication, QImage
 
-from models.inputs import DeviceListModel, CameraFormatListModel
+from .models.inputs import DeviceListModel
 
 from rich import print
 

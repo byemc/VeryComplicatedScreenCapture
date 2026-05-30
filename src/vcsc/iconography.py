@@ -35,12 +35,6 @@ def get_icon(name: str) -> QtGui.QIcon:
     if not icon_from_theme.isNull():
         return icon_from_theme
 
-    # Freedesktop icons not supported or this one doesn't exist.
-    # Lets try from /icons
-    icon_from_file = QtGui.QIcon(f"icons/22/{name}.svg")
-    if not icon_from_file.isNull():
-        return icon_from_file
-
     # Check if any transformations are available into one compatible with this OS maybe...?
     # icon_transgendered = QtGui.QIcon.fromTheme(icon(name))
     # if not icon_transgendered.

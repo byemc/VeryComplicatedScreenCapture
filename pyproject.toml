@@ -1,9 +1,50 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+vcsc = "vcsc.vcsc_app:main"
+
+[tool.setuptools]
+packages=["vcsc"]
+package-dir = {vcsc="src/vcsc"}
+include-package-data=true
+
 [project]
-name = "Very Complicated Screen Capture"
-version = "0.1.0"
+name = "vcsc"
+description = "Overcomplicated tool to capture the output of a capture card or webcam"
+version = "1.0.0a1"
+authors = [
+    {name = "Bye", email = "bye@byecorps.com"}
+]
+classifiers= [
+    "Development Status :: 3 - Alpha",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: English",
+
+    # Supported Python versions
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+
+    # Tested operating systems
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+    "Operating System :: POSIX :: Linux",
+
+    "Topic :: Multimedia :: Video",
+    "Topic :: Multimedia :: Video :: Capture",
+    "Topic :: Multimedia :: Video :: Display"
+]
 readme = "README.md"
-requires-python = ">=3.14"
+license = "Zlib"
+requires-python = ">=3.13"
 dependencies = [
     "pyside6>=6.11.1",
     "rich>=15.0.0",
 ]
+
+[project.urls]
+Homepage = "https://byespace.net/software/vcsc.html"
+Repository = "https://shinonome.rocks/bye/VeryComplicatedScreenCapture"
