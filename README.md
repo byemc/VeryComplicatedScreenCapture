@@ -14,6 +14,7 @@ macOS has not been tested yet. Qt 6.10 requires macOS 13 or newer, so assume tha
 - [ ] Save screenshot to file
 - [ ] Persist settings
 - [ ] Branding
+- [ ] Inhibit screen locking
 
 ## Third-party licences
 

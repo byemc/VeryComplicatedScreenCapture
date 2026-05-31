@@ -4,6 +4,7 @@ from PySide6.QtMultimedia import *
 from PySide6.QtCore import *
 
 from vcsc import iconography
+from vcsc.AboutWindow import AboutWindow
 from vcsc.CameraController import CameraController
 from vcsc.SettingsWidget import SettingsWidget
 from vcsc.VideoWidget import VideoWidget
@@ -17,7 +18,7 @@ class MainWindow(QMainWindow):
         if self.application is not None:
             self.setWindowTitle(self.application.applicationName())
 
-        self.settingsWindow = None
+        self.settings_window = None
         self.settings = None
         self.viewfinder = VideoWidget(self)
         self.audio_context = QAudioOutput(parent=self)
@@ -26,6 +27,8 @@ class MainWindow(QMainWindow):
         self.controller.map_outputs(self.viewfinder, self.audio_context)
 
         self.setCentralWidget(self.viewfinder)
+
+        self.about_window = AboutWindow(self)
 
         # Menu bar
         file_menu = self.menuBar().addMenu("&File")
@@ -116,4 +119,6 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def open_about(self):
-        QMessageBox.about(self, "About", "Very Complicated Video Capture\n\nhttps://byespace.net\nMade available under the zlib license\nThanks for using my program!")
+        self.about_window.show()
+        self.about_window.raise_()
+        self.about_window.activateWindow()

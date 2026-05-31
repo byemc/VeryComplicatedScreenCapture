@@ -175,7 +175,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "pyside6", marker = "os_name != 'nt' or platform_release > '10'", specifier = "~=6.10" },
-    { name = "pyside6", marker = "os_name == 'nt' and platform_release <= '10'", specifier = "~=6.10,<6.13" },
+    { name = "pyside6", marker = "os_name != 'nt' or platform_release > '10'", specifier = ">=6.11" },
+    { name = "pyside6", marker = "os_name == 'nt' and platform_release <= '10'", specifier = ">=6.11,<6.13" },
     { name = "rich", specifier = "~=15.0" },
 ]

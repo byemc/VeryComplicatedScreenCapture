@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0.0a1
+Type=Application
+
+Name=Very Complicated Screen Capture
+Comment=An overcomplicated capture card/webcam monitoring and recording tool.
+Categories=AudioVideo;Recorder;
+
+Icon=net.byespace.vcsc
+Exec=vcsc
+Terminal=false

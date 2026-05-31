@@ -45,8 +45,8 @@ license = "Zlib"
 requires-python = ">=3.10.0"
 dependencies = [
     "rich~=15.0",
-    "pyside6~=6.10; os_name != 'nt' or (os_name == 'nt' and platform_release > '10')",
-    "pyside6~=6.10, < 6.13; os_name == 'nt' and platform_release <= '10'"
+    "pyside6>=6.11; os_name != 'nt' or (os_name == 'nt' and platform_release > '10')",
+    "pyside6>=6.11, < 6.13; os_name == 'nt' and platform_release <= '10'"
 ]
 
 [project.urls]

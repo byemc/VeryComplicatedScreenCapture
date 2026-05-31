@@ -3,15 +3,14 @@ import signal
 import sys
 
 import PySide6
-from PySide6 import QtCore, QtWidgets
+from PySide6 import QtCore, QtWidgets, QtGui
 
-from vcsc import __version__
+from vcsc import __version_friendly__, __appname__
 from vcsc.MainWindow import MainWindow
 from vcsc.CameraController import CameraController
 
 def main():
-    _APPNAME = "Very Complicated Screen Capture"
-    print(_APPNAME, __version__)
+    print(__appname__, __version_friendly__)
     print("(c) https://byespace.net")
     print("Provided under the zlib license.")
     print()
@@ -29,8 +28,9 @@ def main():
 
     # Qt time
     app = QtWidgets.QApplication(sys.argv)
-    app.setApplicationName(_APPNAME)
+    app.setApplicationName(__appname__)
     app.setOrganizationName("Byespace")
+    app.setWindowIcon(QtGui.QIcon("net.byespace.vcsc.png"))
 
     def handle_permissions():
         camera_allowed_status = app.checkPermission(QtCore.QCameraPermission())

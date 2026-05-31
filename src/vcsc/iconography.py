@@ -3,7 +3,6 @@ import platform
 
 from PySide6 import QtGui
 
-
 def get_platform_icon_font() -> str | None:
     system = platform.system()
     release = platform.release()
