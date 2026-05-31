@@ -12,7 +12,8 @@ class MainWindow(QMainWindow):
     def __init__(self, camera_controller: CameraController, parent = None, application: QApplication = None):
         super().__init__(parent)
 
-        self.application: QGuiApplication | None = application
+
+        self.application: QApplication | None = application
         if self.application is not None:
             self.setWindowTitle(self.application.applicationName())
 
@@ -26,31 +27,35 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(self.viewfinder)
 
-        self.toolbar = QToolBar()
-        self.toolbar.setMovable(True)
-        self.addToolBar(self.toolbar)
+        # Menu bar
+        file_menu = self.menuBar().addMenu("&File")
+        view_menu = self.menuBar().addMenu("&View")
 
-        icon = QIcon.fromTheme(iconography.icon("configure"))
-        settings_action = QAction("&Settings", self, shortcut=QKeySequence("Ctrl+I"))
+        settings_icon = QIcon.fromTheme(iconography.icon("configure"))
+        settings_action = QAction(settings_icon, "&Settings", self, shortcut=QKeySequence("Ctrl+I"))
         settings_action.triggered.connect(self.open_settings)
-        self.menuBar().addAction(settings_action)
         self.addAction(settings_action)
 
         copy_image_icon = QIcon.fromTheme(QIcon.ThemeIcon.EditCopy)
         copy_image_action = QAction(copy_image_icon, "&Copy screenshot", self, shortcut=QKeySequence("Ctrl+C"))
         copy_image_action.triggered.connect(self.controller.capture_image)
         self.controller.image_captured.connect(self.copy_image)
-        self.toolbar.addAction(copy_image_action)
         self.addAction(copy_image_action)
 
-        fullscreen_action = QAction("Fullscreen (F11)", self, shortcut=QKeySequence("F11"))
+        fullscreen_action = QAction("&Fullscreen", self, shortcut=QKeySequence("F11"))
         fullscreen_action.triggered.connect(self.toggle_fullscreen)
-        self.menuBar().addAction(fullscreen_action)
         self.addAction(fullscreen_action)
 
-        about_action = QAction("About", self)
+        about_action = QAction("&About", self)
         about_action.triggered.connect(self.open_about)
-        self.menuBar().addAction(about_action)
+
+        # Finally, build the menu structure
+        file_menu.addAction(copy_image_action)
+        file_menu.addSeparator()
+        file_menu.addAction(settings_action)
+
+        view_menu.addAction(fullscreen_action)
+        view_menu.addAction(about_action)
 
         self.controller.video_input_changed.connect(self.set_status)
         self.controller.video_format_changed.connect(self.set_status)
@@ -65,7 +70,6 @@ class MainWindow(QMainWindow):
             print("Setting fullscreen\t", "Is fullscreen:", self.isFullScreen(), "Is maximised:", self.prefersMaximised, "Size:", self.prefersSize)
 
             self.showFullScreen()
-            self.toolbar.hide()
             self.statusBar().hide()
             self.menuBar().hide()
         else:
@@ -77,7 +81,6 @@ class MainWindow(QMainWindow):
             else:
                 print("Setting size", self.prefersSize)
                 self.resize(self.prefersSize)
-            self.toolbar.show()
             self.statusBar().show()
             self.menuBar().show()
 
@@ -103,7 +106,7 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def open_settings(self):
-        if not self.settings:
+        if not self.settings and self.application is not None:
             self.settings = SettingsWidget(self.controller, self.application, self)
             self.settings.finished.connect(self.destroy_settings)
         if self.settings.isHidden():
