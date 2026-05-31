@@ -13,7 +13,7 @@ include-package-data=true
 [project]
 name = "vcsc"
 description = "Overcomplicated tool to capture the output of a capture card or webcam"
-version = "1.0.0a1"
+version = "1.0.0a2"
 authors = [
     {name = "Bye", email = "bye@byecorps.com"}
 ]

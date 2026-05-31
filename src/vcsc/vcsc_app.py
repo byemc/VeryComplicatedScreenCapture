@@ -5,12 +5,12 @@ import sys
 import PySide6
 from PySide6 import QtCore, QtWidgets, QtGui
 
-from vcsc import __version_friendly__, __appname__
+from vcsc import __version__, __appname__
 from vcsc.MainWindow import MainWindow
 from vcsc.CameraController import CameraController
 
 def main():
-    print(__appname__, __version_friendly__)
+    print(__appname__, __version__)
     print("(c) https://byespace.net")
     print("Provided under the zlib license.")
     print()

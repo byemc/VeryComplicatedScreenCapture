@@ -2,7 +2,7 @@ from PySide6 import QtGui, QtCore
 from PySide6.QtCore import QSize, Qt
 from PySide6.QtWidgets import *
 
-from vcsc import __version_friendly__, __appname__
+from vcsc import __version__, __appname__
 
 # Parts of this are shamelessly inspired by KTitleWidget and KAboutApplicationDialogue, but not directly stolen
 class AboutWindow(QWidget):
@@ -24,7 +24,7 @@ class AboutWindow(QWidget):
         )
 
         subtitle_label = QLabel(self)
-        subtitle_label.setText(f"Version {__version_friendly__}")
+        subtitle_label.setText(f"Version {__version__}")
 
         self.widget_layout.addWidget(icon_label, 0, 0, 2, 1)
         self.widget_layout.addWidget(title_label, 0, 1)
