@@ -4,7 +4,6 @@
       <list />
     </option>
     <option name="checkSync" value="false" />
-    <option name="debugJustMyCode" value="true" />
     <option name="env">
       <map />
     </option>
@@ -13,7 +12,7 @@
     <option name="uvArgs">
       <list />
     </option>
-    <option name="uvSdkKey" value="uv (verycomplicatedscreencapture)" />
+    <option name="uvSdkKey" value="uv (VeryComplicatedScreenCapture)" />
     <method v="2" />
   </configuration>
 </component>
