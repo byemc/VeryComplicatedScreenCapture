@@ -13,6 +13,7 @@
 # nuitka-project: --include-qt-plugins=multimedia
 #
 # nuitka-project: --include-package-data=vcsc
+# nuitka-project: --windows-console-mode=disable
 
 from vcsc import vcsc_app
 
