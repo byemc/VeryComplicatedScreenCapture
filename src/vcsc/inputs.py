@@ -32,6 +32,8 @@ class DeviceListModel(QAbstractListModel):
         super().__init__(parent)
         self._inputs = devices
         self._type = self.DeviceType.UNKNOWN
+        if len(devices) <= 0:
+            return
         if type(devices[0]) == QCameraDevice:
             self._type = self.DeviceType.VIDEO
         elif type(devices[0]) == QAudioDevice:
