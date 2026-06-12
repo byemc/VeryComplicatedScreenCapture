@@ -65,5 +65,5 @@ vcsc = ["*.ico", "*.svg"]
 
 [tool.setuptools.data-files]
 "share/applications" = ["net.byespace.vcsc.desktop"]
-"share/icons/hicolor/scaleable/apps" = ["net.byespace.vcsc.svg"]
+"share/icons/hicolor/scalable/apps" = ["net.byespace.vcsc.svg"]
 "share/metainfo" = ["net.byespace.vcsc.metainfo.xml"]
