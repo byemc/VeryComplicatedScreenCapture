@@ -33,27 +33,30 @@ Mac has been tested and it doesn't work. I don't own a Mac so I can't fix it on 
 
 ## Summary
 
-Recently, I needed a thing to take a look at the video feed from my newly-purchased capture card. And this is the end result!
+Recently, I needed a thing to take a look at the video feed from my newly-purchased capture card. And this is the end
+result!
 
 I don’t actually think anyone needs this but hey it somewhat works! I don’t have everything I want implemented yet.
 
 ## Features
 
 **WHAT WORKS:** <small>(as of v1.0.0a1)</small>
+
 - Viewing capture card output
 - Copying screenshots to clipboard
 
 **PLANNED BUT NOT WORKING YET:**
+
 - Capturing to video files
 - Saving screenshots to disk
 - Settings persistence
 - Inbiting screen locking (surprisingly important!!)
 
-
 I'd like to do something like Steam Background Recording wrt having a replay buffer that you can just record the last 30
 seconds or something, but I may need to completely rework the program to do that. Still.
 
 ## Downloading
+
 Currently, the only way to run VCSC is to run it from source or from PyPI.
 
 <ul>
@@ -63,11 +66,12 @@ Currently, the only way to run VCSC is to run it from source or from PyPI.
 </ul>
 
 On Linux, installation of the following packages system-wide is **strongly recommended**:
+
 - PySide6
-  - Fedora: `python3-pyside6`
-  - Ubuntu: `python3-qtpy`
-  - Arch Linux: `pyside6`
-  - !! This will install Qt system-wide as well !!
+    - Fedora: `python3-pyside6`
+    - Ubuntu: `python3-qtpy`
+    - Arch Linux: `pyside6`
+    - !! This will install Qt system-wide as well !!
 
 You should then install the `vcsc` package using `pip`, `pipx`, or similar. Please **DO NOT USE PIP** if your system
 warns you about breaking system packages.
@@ -96,7 +100,8 @@ Using   PySide  6.11.1
 PySide6 path: C:\Users\Bye\AppData\Roaming\Python\Python314\site-packages\PySide6\__init__.py
 ```
 
-I'm hoping to make it more usable on macOS and Windows at some point, and have it integrate with the system's app list on
+I'm hoping to make it more usable on macOS and Windows at some point, and have it integrate with the system's app list
+on
 Linux (but it's haaaaaaard)
 
 ## Third-party licences
