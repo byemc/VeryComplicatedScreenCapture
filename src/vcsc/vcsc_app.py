@@ -30,7 +30,8 @@ def main():
     app = QtWidgets.QApplication(sys.argv)
     app.setApplicationName(__appname__)
     app.setOrganizationName("Byespace")
-    app.setWindowIcon(QtGui.QIcon("net.byespace.vcsc.png"))
+
+    app.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.realpath(__file__)), "net.byespace.vcsc.svg")))
 
     def handle_permissions():
         camera_allowed_status = app.checkPermission(QtCore.QCameraPermission())

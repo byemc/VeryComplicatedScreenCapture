@@ -17,4 +17,4 @@ modules:
       - "pip3 install --no-build-isolation --prefix=/app ."
     sources:
       - type: archive
-        path: dist/vcsc-1.0.0a1.tar.gz
+        path: dist/vcsc-1.0.0a2.tar.gz

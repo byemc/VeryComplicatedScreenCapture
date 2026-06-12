@@ -6,9 +6,10 @@ build-backend = "setuptools.build_meta"
 vcsc = "vcsc.vcsc_app:main"
 
 [tool.setuptools]
-packages=["vcsc"]
-package-dir = {vcsc="src/vcsc"}
 include-package-data=true
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [project]
 name = "vcsc"
@@ -46,14 +47,23 @@ requires-python = ">=3.10.0"
 dependencies = [
     "rich~=15.0",
     "pyside6>=6.11; os_name != 'nt' or (os_name == 'nt' and platform_release > '10')",
-    "pyside6>=6.11, < 6.13; os_name == 'nt' and platform_release <= '10'"
+    "pyside6>=6.11, < 6.13; os_name == 'nt' and platform_release <= '10'",
 ]
 
 [project.urls]
 Homepage = "https://byespace.net/software/vcsc/"
 Repository = "https://shinonome.rocks/bye/VeryComplicatedScreenCapture"
 
+[dependency-groups]
+dev = [
+    "imageio>=2.37.3",
+    "nuitka>=4.1.2",
+]
+
+[tool.setuptools.package-data]
+vcsc = ["*.ico", "*.svg"]
+
 [tool.setuptools.data-files]
 "share/applications" = ["net.byespace.vcsc.desktop"]
-"share/icons/hicolor/128/apps" = ["net.byespace.vcsc.png"]
+"share/icons/hicolor/scaleable/apps" = ["net.byespace.vcsc.svg"]
 "share/metainfo" = ["net.byespace.vcsc.metainfo.xml"]

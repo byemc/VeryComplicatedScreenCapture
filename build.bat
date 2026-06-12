@@ -1,0 +1,3 @@
+
+nuitka ^
+    --main=./src/vcsc
